@@ -1,0 +1,2 @@
+# Advantage Actor-Critic on OpenAI Gym Pendulum Problem
+This project is from my reinforcement learning course. The goal of the pendulum problem in OpenAI Gym is to swing the pendulum upwards and hold this position as long as possible. I have attempted to use Advantage Actor-Critic (A2C) to solve this problem, but the policy converged to a non-optimal solution to keep swinging the pendulum in a circular motion. Maybe other RL algorithms can find a better policy. 

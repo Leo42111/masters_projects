@@ -1,0 +1,2 @@
+# NLP - Multi-turn Dialogue Response Generation
+This project is from my Natural Language Processing course. I have fine-tuned DialoGPT model (https://arxiv.org/abs/1911.00536) with DailyDialog dataset (https://arxiv.org/abs/1710.03957), and used BLEU-1,2,4, ROUGE-1,2,L, and Distinct-1,2 scores to evaluate the performance on the model.
