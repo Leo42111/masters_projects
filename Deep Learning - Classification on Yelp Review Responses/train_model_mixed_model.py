@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Last modified: 17Apr (Leo)
-* Tidy up code for submission
+
 """
 import warnings
 warnings.filterwarnings("ignore")
@@ -43,22 +43,9 @@ if torch.cuda.is_available():
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 print("Use device: ", device)
 
-### NOTE: Please modify the path to clean csv
-# code_path = 'D:/Yelp_data/final'
-
-## Peter's path
-code_path = 'C:/Users/P/OneDrive - City University of Hong Kong - Student/CityU/year1_semB/SDSC8007 Deep Learning/Project/yelp/data_clean/'
-save_path = 'C:/Users/P/OneDrive - City University of Hong Kong - Student/CityU/year1_semB/SDSC8007 Deep Learning/Project/yelp/Code/models/mixed_text_nontext/'
-graph_path = 'C:/Users/P/OneDrive - City University of Hong Kong - Student/CityU/year1_semB/SDSC8007 Deep Learning/Project/yelp/Code/graphs/mixed_text_nontext/'
-result_path = 'C:/Users/P/OneDrive - City University of Hong Kong - Student/CityU/year1_semB/SDSC8007 Deep Learning/Project/yelp/Code/results/mixed_text_nontext/'
-
-## Leo's path
-#code_path = 'C:/Users/leoma/OneDrive - City University of Hong Kong/Project/yelp/data_clean/'
-#save_path = 'C:/Users/leoma/OneDrive - City University of Hong Kong/Project/yelp/Code/models/'
-#graph_path = 'C:/Users/leoma/OneDrive - City University of Hong Kong/Project/yelp/Code/graphs/'
-#result_path = 'C:/Users/leoma/OneDrive - City University of Hong Kong/Project/yelp/Code/results/'
-
-# %%
+#code_path = [insert path]
+#save_path = [insert path]
+#result_path = [insert path]
 
 # Load datasets
 print("Reading train_dataset...")
@@ -66,8 +53,6 @@ train_dataset = pd.read_csv(code_path + 'train_dataset.csv')
 print("Reading val_dataset...")
 val_dataset = pd.read_csv(code_path + 'val_dataset.csv')
 print("Finished reading datasets.")
-
-# %%
 
 # Create categorical Y columns, separating numerical Y into classes
 Y_cols = ['useful', 'funny', 'cool']
@@ -91,8 +76,6 @@ val_dataset = val_dataset.drop(columns=Y_cols)
 X_nontext_cols = [i for i in train_dataset if
                   i not in useful_Y_cols + funny_Y_cols + cool_Y_cols + ['text']]
 
-#%%
-
 # For DistilBertTokenizer, ['CLS']: 101, ['SEP']: 102
 
 # Initialize hyperparameters
@@ -112,8 +95,6 @@ val_dataloader = utils.gen_dataloader(val_dataset, 'val', X_nontext_cols, useful
                    funny_Y_cols, cool_Y_cols, max_seq_len, batch_size)
 print("Finished generating dataloaders.")
 
-
-# %%
 ########### Training process ###########
 # Train models for each Y SEPARATELY
 for Y in Y_cols:

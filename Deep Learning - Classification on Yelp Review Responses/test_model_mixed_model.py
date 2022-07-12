@@ -1,8 +1,8 @@
+# -*- coding: utf-8 -*-
 """
 Last modified: 17Apr (Leo)
-* Tidy up code for submission
-"""
 
+"""
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -44,17 +44,9 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 #device = 'cpu'
 print("Use device: ", device)
 
-### Modify path if necessary
-
-# Peter's path
-code_path = 'C:/Users/P/OneDrive - City University of Hong Kong - Student/CityU/year1_semB/SDSC8007 Deep Learning/Project/yelp/data_clean/'
-save_path = 'C:/Users/P/OneDrive - City University of Hong Kong - Student/CityU/year1_semB/SDSC8007 Deep Learning/Project/yelp/Code/models/mixed_text_nontext/'
-result_path = 'C:/Users/P/OneDrive - City University of Hong Kong - Student/CityU/year1_semB/SDSC8007 Deep Learning/Project/yelp/Code/results/mixed_text_nontext/'
-
-# Leo's path
-#code_path = 'C:/Users/leoma/OneDrive - City University of Hong Kong/Project/yelp/data_clean/'
-#save_path = 'C:/Users/leoma/OneDrive - City University of Hong Kong/Project/yelp/Code/models/baseline_nontext/'
-#result_path = 'C:/Users/leoma/OneDrive - City University of Hong Kong/Project/yelp/Code/results/baseline_nontext/'
+#code_path = [insert path]
+#save_path = [insert path]
+#result_path = [insert path]
 
 # Read test dataset
 print("Reading test_dataset...")
